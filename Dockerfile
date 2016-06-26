@@ -25,10 +25,10 @@ run	mkdir /usr/local/dotneti &&\
 
 run	useradd -m coder -s /bin/bash
 
-run	echo $' \
+run	echo ' \
 Xvfb & \
-sleep 5 \ 
-export DISPLAY=localhost:0 \
+sleep 5 ;\ 
+export DISPLAY=localhost:0 ;\
 blackbox & \
 xterm & \
 x11vnc -passwd somepass ' >> /run.sh
