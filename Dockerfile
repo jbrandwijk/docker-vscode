@@ -19,9 +19,10 @@ run     curl -o vscode-amd64.deb https://az764295.vo.msecnd.net/stable/fe7f407b9
 	rm vscode-amd64.deb
 
 # Install dotnet core
-run	mkdir /usr/local/dotnet &&\
-	curl -sSL https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0-preview1/scripts/obtain/dotnet-install.sh | bash /dev/stdin --version 1.0.0-preview1-002702 --install-dir /usr/local/dotneti &&\
-	ln -s /usr/local/dotnet/dotnet /usr/local/bin
+run	curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?LinkID=809130 &&\
+	mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet &&\
+	ln -s /opt/dotnet/dotnet /usr/local/bin
+
 
 run	useradd -m coder -s /bin/bash
 
